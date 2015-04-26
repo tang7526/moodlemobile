@@ -181,6 +181,11 @@
 
 <ul class="nav nav-v js-accordion">
     <% _.each(plugins, function(plugin) { %>
+    
+    	<% if(plugin.name == 'upload'){
+    		return false;
+    	}%>
+    	    
         <% if (typeof plugin.subMenus == "undefined" || plugin.subMenus.length == 0) { %>
             <li class="nav-item no-submenu">
                 <a href="<%= plugin.menuURL %>" class="alink touch-row">
